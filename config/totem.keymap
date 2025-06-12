@@ -132,8 +132,8 @@
     };
 
     macros {
-        fotilde: fotilde {
-            label = "fotilde";
+        paragraf: paragraf {
+            label = "paragraf";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -174,10 +174,10 @@
         symbols_layer {
             label = "NUM";
             bindings = <
-         &kp GRAVE     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4    &kp N5    &kp NUMBER_6    &kp N7      &kp N8          &kp N9          &kp N0
-         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4    &kp N5    &kp NUMBER_6    &kp N7      &kp N8          &kp N9          &kp N0
-&kp ESC  &trans        &trans        &trans        &trans          &trans    &kp UNDERSCORE  &kp EQUAL   &kp LEFT_BRACE  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp SQT
-                                     &trans        &kp LEFT_SHIFT  &trans    &trans          &kp RSHIFT  &trans
+         &kp GRAVE     &paragraf     &trans        &trans          &trans    &trans        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp MINUS  &kp EQUAL
+         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4    &kp N5    &kp NUMBER_6  &kp N7            &kp N8             &kp N9     &kp N0
+&kp ESC  &trans        &trans        &trans        &trans          &trans    &trans        &trans            &trans             &trans     &trans     &kp SQT
+                                     &trans        &kp LEFT_SHIFT  &trans    &trans        &kp RSHIFT        &trans
             >;
         };
 

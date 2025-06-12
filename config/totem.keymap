@@ -138,16 +138,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LS(TILDE)>,
+                <&kp LEFT_SHIFT &kp LEFT_CONTROL>,
                 <&macro_tap>,
-                <&kp SPACE>;
-        };
-
-        new_macro: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>;
-            label = "NEW_MACRO";
+                <&kp U &kp N0 &kp N0 &kp LS(A) &kp N7>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT &kp LEFT_CONTROL>;
         };
     };
 };

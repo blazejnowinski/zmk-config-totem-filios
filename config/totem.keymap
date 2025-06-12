@@ -105,6 +105,15 @@
             label = "HML_UTILITY_LAYER";
             bindings = <&mo>, <&kp>;
         };
+
+        backspace_delete: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE";
+            bindings = <&kp BACKSPACE>, <&kp DEL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 };
 
@@ -143,13 +152,6 @@
                 <&kp U &kp N0 &kp N0 &kp LS(A) &kp N7>,
                 <&macro_release>,
                 <&kp LEFT_SHIFT &kp LEFT_CONTROL>;
-        };
-
-        backspace_del: backspace_del {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press>;
-            label = "BACKSPACE_DEL";
         };
     };
 };

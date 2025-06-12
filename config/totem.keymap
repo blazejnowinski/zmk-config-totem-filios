@@ -142,17 +142,17 @@
             &kp Q                &kp W              &kp E            &kp R            &kp T      &kp Y        &kp U             &kp I            &kp O               &kp P
             &hml LEFT_CONTROL A  &hml LEFT_SHIFT S  &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G      &kp H        &hmr RIGHT_GUI J  &hmr LEFT_ALT K  &hmr RIGHT_SHIFT L  &hmr RIGHT_CONTROL SEMI
 &kp ESCAPE  &kp Z                &kp X              &kp C            &kp V            &kp B      &kp N        &kp M             &kp COMMA        &kp DOT             &kp FSLH                 &kp ENTER
-                                                    &mo NUM          &kp SPACE        &kp TAB    &lt NAV RET  &lt2 SYM DEL      &lt 2 TAB
+                                                    &mo NUM          &kp SPACE        &kp TAB    &lt NAV RET  &mo SYM           &lt 2 TAB
             >;
         };
 
         sym_layer {
             label = "SYM";
             bindings = <
-        &kp EXCL   &kp AT     &kp RA(E)  &kp DLLR  &kp PIPE     &kp EQUAL  &kp LBKT  &kp RBKT  &kp RA(O)  &trans
-        &kp RA(A)  &kp RA(S)  &kp HASH   &kp STAR  &kp PRCNT    &kp MINUS  &kp LPAR  &kp RPAR  &kp RA(L)  &kp RA(O)
-&trans  &kp RA(Z)  &kp RA(X)  &kp RA(C)  &kp AMPS  &kp CARET    &kp RA(N)  &kp LBRC  &kp RBRC  &fotilde   &kp BSLH   &kp DOUBLE_QUOTES
-                              &trans     &trans    &kp UNDER    &trans     &trans    &trans
+       &kp EXCL   &kp AT     &kp RA(E)  &kp DLLR  &kp PIPE     &kp EQUAL  &kp LBKT  &kp RBKT  &kp RA(O)  &trans
+       &kp RA(A)  &kp RA(S)  &kp HASH   &kp STAR  &kp PRCNT    &kp MINUS  &kp LPAR  &kp RPAR  &kp RA(L)  &kp RA(O)
+&to 0  &kp RA(Z)  &kp RA(X)  &kp RA(C)  &kp AMPS  &kp CARET    &kp RA(N)  &kp LBRC  &kp RBRC  &fotilde   &kp BSLH   &trans
+                             &trans     &trans    &kp UNDER    &trans     &trans    &trans
             >;
         };
 

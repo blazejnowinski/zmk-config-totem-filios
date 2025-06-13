@@ -138,6 +138,11 @@
             key-positions = <23 24>;
             bindings = <&kp LC(V)>;
         };
+
+        combo_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17 18>;
+        };
     };
 
     macros {

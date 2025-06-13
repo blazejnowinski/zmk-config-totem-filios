@@ -141,7 +141,17 @@
 
         combo_enter {
             bindings = <&kp ENTER>;
-            key-positions = <16 17 18>;
+            key-positions = <18 17 16>;
+        };
+
+        combo_esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <12 13 11 13>;
+        };
+
+        combo_tab {
+            bindings = <&kp TAB>;
+            key-positions = <0 1>;
         };
     };
 
@@ -157,6 +167,9 @@
                 <&kp U &kp N0 &kp N0 &kp LS(A) &kp N7>,
                 <&macro_release>,
                 <&kp LEFT_SHIFT &kp LEFT_CONTROL>;
+
+            wait-ms = <0>;
+            tap-ms = <0>;
         };
     };
 };
@@ -168,40 +181,40 @@
         base_layer {
             label = "base";
             bindings = <
-            &kp Q                &kp W              &kp E                   &kp R            &kp T      &kp Y              &kp U             &kp I                   &kp O               &kp P
-            &hml LEFT_CONTROL A  &hml LEFT_SHIFT S  &hml_utility_layer 3 D  &hml LEFT_GUI F  &kp G      &kp H              &hmr RIGHT_GUI J  &hml_utility_layer 3 K  &hmr RIGHT_SHIFT L  &hmr RIGHT_CONTROL SEMI
-&kp ESCAPE  &kp Z                &kp X              &kp C                   &kp V            &kp B      &kp N              &kp M             &kp COMMA               &kp DOT             &kp FSLH                 &kp LEFT_ALT
-                                                    &mo 2                   &kp SPACE        &kp TAB    &backspace_delete  &mo 1             &mo 2
+           &kp Q                &kp W              &kp E            &kp R            &kp T        &kp Y              &kp U            &kp I            &kp O               &kp P
+           &hml LEFT_CONTROL A  &hml LEFT_SHIFT S  &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G        &kp H              &hmr LEFT_GUI J  &hmr LEFT_ALT K  &hmr RIGHT_SHIFT L  &hmr RIGHT_CONTROL SEMI
+&lt 3 ESC  &kp Z                &kp X              &kp C            &kp V            &kp B        &kp N              &kp M            &kp COMMA        &kp DOT             &kp FSLH                 &to 4
+                                                   &to 3            &to 2            &kp SPACE    &backspace_delete  &mo 2            &mo 1
             >;
         };
 
         altgr_layer {
             label = "altgr";
             bindings = <
-         &kp Q                    &kp W                  &kp RA(E)               &kp R            &kp T      &kp Y              &kp U             &kp I                   &kp RA(O)              &kp P
-         &hml LEFT_CONTROL RA(A)  &hml LEFT_SHIFT RA(S)  &hml_utility_layer 3 D  &hml LEFT_GUI F  &kp G      &kp H              &hmr RIGHT_GUI J  &hml_utility_layer 3 K  &hmr LEFT_SHIFT RA(L)  &hmr RIGHT_CONTROL COLON
-&kp ESC  &kp RA(Z)                &kp RA(X)              &kp RA(C)               &kp V            &kp B      &kp RA(N)          &kp M             &kp COMMA               &kp PERIOD             &kp SLASH                 &kp LEFT_ALT
-                                                         &mo 2                   &kp SPACE        &kp TAB    &backspace_delete  &trans            &mo 2
+        &trans                   &trans                 &kp RA(E)        &trans           &trans    &trans     &trans            &trans           &kp RA(O)              &trans
+        &hml LEFT_CONTROL RA(A)  &hml LEFT_SHIFT RA(S)  &hml LEFT_ALT D  &hml LEFT_GUI F  &trans    &trans     &hmr RIGHT_GUI J  &hmr LEFT_ALT K  &hmr LEFT_SHIFT RA(L)  &hmr LEFT_CONTROL SEMICOLON
+&trans  &kp RA(Z)                &kp RA(X)              &kp RA(C)        &trans           &trans    &kp RA(N)  &trans            &trans           &trans                 &trans                       &trans
+                                                        &trans           &trans           &trans    &trans     &trans            &trans
             >;
         };
 
         symbols_layer {
             label = "symbols";
             bindings = <
-         &kp GRAVE                   &paragraf               &trans                         &trans                  &trans     &trans             &kp LEFT_BRACKET   &kp RIGHT_BRACKET        &kp MINUS            &kp EQUAL
-         &hml LEFT_CONTROL NUMBER_1  &hml NUMBER_2 NUMBER_2  &hml_utility_layer 3 NUMBER_3  &hml LEFT_GUI NUMBER_4  &kp N5     &kp NUMBER_6       &hmr RIGHT_GUI N7  &hml_utility_layer 3 N8  &hmr RIGHT_SHIFT N9  &hml_utility_layer 3 N0
-&kp ESC  &trans                      &trans                  &trans                         &trans                  &trans     &trans             &trans             &trans                   &trans               &trans                   &kp SQT
-                                                             &trans                         &kp SPACE               &kp TAB    &backspace_delete  &trans             &trans
+       &kp GRAVE                   &paragraf               &trans                  &trans                  &trans    &kp SQT       &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp MINUS            &kp EQUAL
+       &hml LEFT_CONTROL NUMBER_1  &hml NUMBER_2 NUMBER_2  &hml LEFT_ALT NUMBER_3  &hml LEFT_GUI NUMBER_4  &kp N5    &kp NUMBER_6  &hmr RIGHT_GUI N7  &hmr LEFT_ALT N8   &hmr RIGHT_SHIFT N9  &hmr RIGHT_CONTROL N0
+&to 0  &trans                      &trans                  &trans                  &trans                  &trans    &trans        &trans             &trans             &trans               &trans                 &to 0
+                                                           &trans                  &trans                  &trans    &trans        &trans             &trans
             >;
         };
 
         utility_layer {
             label = "utility";
             bindings = <
-        &kp F1                           &kp F2                       &kp F3                &kp F4                          &kp F5        &kp F6             &kp F7                     &kp F8        &kp F9                        &kp F10
-        &hml LEFT_CONTROL C_VOLUME_DOWN  &hml LEFT_SHIFT C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &hml LEFT_GUI C_BRIGHTNESS_INC  &trans        &kp LEFT           &hmr RIGHT_GUI DOWN_ARROW  &kp UP_ARROW  &hmr RIGHT_SHIFT RIGHT_ARROW  &hmr RIGHT_CONTROL F11
-&trans  &bootloader                      &sys_reset                   &bt BT_CLR            &bt BT_PRV                      &bt BT_NXT    &trans             &trans                     &mkp MB4      &mkp MB5                      &kp F12                 &trans
-                                                                      &to 4                 &kp SPACE                       &kp TAB       &backspace_delete  &trans                     &to 4
+       &kp F1                           &kp F2                       &kp F3                &kp F4                          &kp F5        &kp F6        &kp F7                     &kp F8        &kp F9                        &kp F10
+       &hml LEFT_CONTROL C_VOLUME_DOWN  &hml LEFT_SHIFT C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &hml LEFT_GUI C_BRIGHTNESS_INC  &trans        &kp LEFT      &hmr RIGHT_GUI DOWN_ARROW  &kp UP_ARROW  &hmr RIGHT_SHIFT RIGHT_ARROW  &hmr RIGHT_CONTROL F11
+&to 0  &bootloader                      &sys_reset                   &bt BT_CLR            &bt BT_PRV                      &bt BT_NXT    &bt BT_SEL 0  &trans                     &mkp MB4      &mkp MB5                      &kp F12                 &to 0
+                                                                     &trans                &trans                          &trans        &trans        &trans                     &trans
             >;
         };
 

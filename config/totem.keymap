@@ -163,6 +163,11 @@
             bindings = <&to 3>;
             key-positions = <1 2 3 6 7 8>;
         };
+
+        capslock {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <30 21>;
+        };
     };
 
     macros {
@@ -221,20 +226,20 @@
         base_layer {
             label = "base";
             bindings = <
-         &kp Q  &kp W  &kp E  &kp R      &kp T      &kp Y          &kp U          &kp I      &kp O    &kp P
-         &kp A  &kp S  &kp D  &kp F      &kp G      &kp H          &kp J          &kp K      &kp L    &kp SEMICOLON
-&kp ESC  &kp Z  &kp X  &kp C  &kp V      &kp B      &kp N          &kp M          &kp COMMA  &kp DOT  &kp FSLH       &kp ENTER
-                       &mo 1  &kp SPACE  &kp TAB    &kp BACKSPACE  &kp RIGHT_ALT  &mo 2
+         &kp Q  &kp W  &kp E  &kp R        &kp T      &kp Y          &kp U          &kp I      &kp O    &kp P
+         &kp A  &kp S  &kp D  &kp F        &kp G      &kp H          &kp J          &kp K      &kp L    &kp SEMICOLON
+&kp ESC  &kp Z  &kp X  &kp C  &kp V        &kp B      &kp N          &kp M          &kp COMMA  &kp DOT  &kp FSLH       &kp ENTER
+                       &to 1  &lt 1 SPACE  &kp TAB    &kp BACKSPACE  &kp RIGHT_ALT  &mo 2
             >;
         };
 
         symbols_layer {
             label = "symbols";
             bindings = <
-        &kp GRAVE                   &artykul                  &paragraf               &ustep                  &punkt    &trans         &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp MINUS            &kp EQUAL
-        &hml LEFT_CONTROL NUMBER_1  &hml LEFT_SHIFT NUMBER_2  &hml LEFT_ALT NUMBER_3  &hml LEFT_GUI NUMBER_4  &kp N5    &kp NUMBER_6   &hmr RIGHT_GUI N7  &hmr LEFT_ALT N8   &hmr RIGHT_SHIFT N9  &hmr RIGHT_CONTROL N0
-&trans  &trans                      &trans                    &trans                  &trans                  &trans    &kp BACKSLASH  &kp SQT            &trans             &trans               &trans                 &trans
-                                                              &trans                  &trans                  &trans    &trans         &trans             &trans
+       &kp GRAVE                   &artykul                  &paragraf               &ustep                  &punkt    &trans         &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp MINUS            &kp EQUAL
+       &hml LEFT_CONTROL NUMBER_1  &hml LEFT_SHIFT NUMBER_2  &hml LEFT_ALT NUMBER_3  &hml LEFT_GUI NUMBER_4  &kp N5    &kp NUMBER_6   &hmr RIGHT_GUI N7  &hmr LEFT_ALT N8   &hmr RIGHT_SHIFT N9  &hmr RIGHT_CONTROL N0
+&to 0  &trans                      &trans                    &trans                  &trans                  &trans    &kp BACKSLASH  &kp SQT            &trans             &trans               &trans                 &trans
+                                                             &trans                  &trans                  &trans    &trans         &trans             &trans
             >;
         };
 

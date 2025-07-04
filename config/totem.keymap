@@ -170,7 +170,7 @@
         };
 
         capslock {
-            bindings = <&kp CAPSLOCK>;
+            bindings = <&kp CAPS>;
             key-positions = <9 8>;
             timeout-ms = <50>;
         };

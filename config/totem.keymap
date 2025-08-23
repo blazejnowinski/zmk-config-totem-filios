@@ -137,6 +137,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
         };
+
+        hmr_colon: hmr_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HMR_COLON";
+            bindings = <&hmr RIGHT_CONTROL COLON>, <&kp SEMI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 };
 
@@ -244,8 +253,8 @@
             label = "base";
             bindings = <
          &kp Q                &kp W              &kp E            &kp R            &kp T      &kp Y              &kp U           &kp I        &kp O           &kp P
-         &hml LEFT_CONTROL A  &hml LEFT_SHIFT S  &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G      &h_arrow_left      &j_arrow_down   &k_arrow_up  &l_arrow_right  &hmr RIGHT_CONTROL SEMI
-&kp ESC  &kp Z                &kp X              &kp C            &kp V            &kp B      &kp N              &kp M           &kp COMMA    &kp DOT         &kp FSLH                 &kp ENTER
+         &hml LEFT_CONTROL A  &hml LEFT_SHIFT S  &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G      &h_arrow_left      &j_arrow_down   &k_arrow_up  &l_arrow_right  &hmr_colon
+&kp ESC  &kp Z                &kp X              &kp C            &kp V            &kp B      &kp N              &kp M           &kp COMMA    &kp DOT         &kp FSLH    &kp ENTER
                                                  &mo 3            &lt 1 SPACE      &kp TAB    &backspace_delete  &mt RALT SPACE  &mo 2
             >;
         };

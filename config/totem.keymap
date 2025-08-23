@@ -93,19 +93,6 @@
             ignore-numbers;
         };
 
-        hml_utility_layer: hml_utility_layer {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>;
-            hold-trigger-on-release;
-            label = "HML_UTILITY_LAYER";
-            bindings = <&mo>, <&kp>;
-        };
-
         backspace_delete: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             label = "BACKSPACE_DELETE";
@@ -113,6 +100,42 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        h_arrow_left: h_arrow_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "H_ARROW_LEFT";
+            bindings = <&kp H>, <&kp LEFT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        j_arrow_down: j_arrow_down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "J_ARROW_DOWN";
+            bindings = <&hmr RIGHT_GUI J>, <&kp DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        k_arrow_up: k_arrow_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "K_ARROW_UP";
+            bindings = <&hmr RIGHT_GUI K>, <&kp UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        l_arrow_right: l_arrow_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "L_ARROW_RIGHT";
+            bindings = <&hmr RIGHT_GUI L>, <&kp RIGHT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
         };
     };
 };
@@ -151,33 +174,15 @@
             timeout-ms = <50>;
         };
 
-        combo_tab {
-            bindings = <&kp CAPS>;
-            key-positions = <0 1>;
-            timeout-ms = <50>;
-        };
-
         alt_base_hmr {
             bindings = <&tog 4>;
             key-positions = <22 23 24 27 28 29>;
             timeout-ms = <50>;
         };
 
-        mouse_layer {
-            bindings = <&tog 3>;
-            key-positions = <6 7 8>;
-            timeout-ms = <50>;
-        };
-
         capslock_fix_for_keyd {
-            bindings = <&double_shift>;
+            bindings = <&kp CAPSLOCK>;
             key-positions = <30 21>;
-            timeout-ms = <50>;
-        };
-
-        to_base_layer {
-            bindings = <&to 0>;
-            key-positions = <22 29>;
             timeout-ms = <50>;
         };
     };
@@ -228,16 +233,6 @@
             wait-ms = <0>;
             tap-ms = <0>;
         };
-
-        double_shift: double_shift {
-            compatible = "zmk,behavior-macro";
-            label = "DOUBLE_SHIFT";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_SHIFT &kp RIGHT_SHIFT>;
-
-            wait-ms = <0>;
-            tap-ms = <0>;
-        };
     };
 };
 
@@ -248,27 +243,27 @@
         base_layer {
             label = "base";
             bindings = <
-         &kp Q  &kp W  &kp E  &kp R        &kp T      &kp Y          &kp U           &kp I      &kp O    &kp P
-         &kp A  &kp S  &kp D  &kp F        &kp G      &kp H          &kp J           &kp K      &kp L    &kp SEMICOLON
-&kp ESC  &kp Z  &kp X  &kp C  &kp V        &kp B      &kp N          &kp M           &kp COMMA  &kp DOT  &kp FSLH       &kp ENTER
-                       &mo 3  &lt 1 SPACE  &kp TAB    &kp BACKSPACE  &mt RALT SPACE  &mo 2
+         &kp Q                &kp W              &kp E            &kp R            &kp T      &kp Y              &kp U           &kp I        &kp O           &kp P
+         &hml LEFT_CONTROL A  &hml LEFT_SHIFT S  &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G      &h_arrow_left      &j_arrow_down   &k_arrow_up  &l_arrow_right  &hmr RIGHT_CONTROL SEMI
+&kp ESC  &kp Z                &kp X              &kp C            &kp V            &kp B      &kp N              &kp M           &kp COMMA    &kp DOT         &kp FSLH                 &kp ENTER
+                                                 &mo 3            &lt 1 SPACE      &kp TAB    &backspace_delete  &mt RALT SPACE  &mo 2
             >;
         };
 
         symbols_layer {
             label = "symbols";
             bindings = <
-       &kp GRAVE                   &artykul                  &paragraf               &ustep                  &punkt    &trans         &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp MINUS            &kp EQUAL
-       &hml LEFT_CONTROL NUMBER_1  &hml LEFT_SHIFT NUMBER_2  &hml LEFT_ALT NUMBER_3  &hml LEFT_GUI NUMBER_4  &kp N5    &kp NUMBER_6   &hmr RIGHT_GUI N7  &hmr LEFT_ALT N8   &hmr RIGHT_SHIFT N9  &hmr RIGHT_CONTROL N0
-&to 0  &trans                      &trans                    &trans                  &trans                  &trans    &kp BACKSLASH  &kp SQT            &trans             &trans               &trans                 &trans
-                                                             &trans                  &trans                  &trans    &trans         &trans             &trans
+        &kp GRAVE                   &artykul                  &paragraf               &ustep                  &punkt    &trans         &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp MINUS            &kp EQUAL
+        &hml LEFT_CONTROL NUMBER_1  &hml LEFT_SHIFT NUMBER_2  &hml LEFT_ALT NUMBER_3  &hml LEFT_GUI NUMBER_4  &kp N5    &kp NUMBER_6   &hmr RIGHT_GUI N7  &hmr LEFT_ALT N8   &hmr RIGHT_SHIFT N9  &hmr RIGHT_CONTROL N0
+&trans  &trans                      &trans                    &trans                  &trans                  &trans    &kp BACKSLASH  &kp SQT            &kp COMMA          &kp PERIOD           &kp SLASH              &trans
+                                                              &trans                  &trans                  &trans    &trans         &trans             &trans
             >;
         };
 
         utility_layer {
             label = "utility";
             bindings = <
-        &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp K_MUTE  &kp C_VOL_UP  &kp C_VOL_DN    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+        &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
         &kp F2                &kp F2                &kp F3      &kp F4        &kp F5          &kp F6        &kp F7        &kp F8        &kp F10       &kp F11
 &kp F1  &bootloader           &sys_reset            &trans      &trans        &trans          &bt BT_CLR    &bt BT_PRV    &bt BT_NXT    &trans        &trans        &kp F12
                                                     &trans      &trans        &trans          &trans        &trans        &trans
@@ -277,7 +272,7 @@
 
         mouse_layer {
             bindings = <
-       &trans  &trans    &trans    &trans    &trans    &trans          &trans          &trans        &trans           &trans
+       &trans  &trans    &trans    &trans    &trans    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
        &trans  &mkp MB3  &mkp MB2  &mkp MB1  &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
 &to 0  &trans  &trans    &trans    &trans    &trans    &trans          &trans          &mkp MB4      &mkp MB5         &trans  &to 0
                          &trans    &trans    &trans    &trans          &trans          &trans

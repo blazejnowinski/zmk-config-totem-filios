@@ -132,7 +132,7 @@
         l_arrow_right: l_arrow_right {
             compatible = "zmk,behavior-mod-morph";
             label = "L_ARROW_RIGHT";
-            bindings = <&hmr RIGHT_GUI L>, <&kp RIGHT>;
+            bindings = <&hmr RIGHT_SHIFT L>, <&kp RIGHT>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;

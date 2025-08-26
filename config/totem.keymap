@@ -123,7 +123,7 @@
         k_arrow_up: k_arrow_up {
             compatible = "zmk,behavior-mod-morph";
             label = "K_ARROW_UP";
-            bindings = <&hmr RIGHT_GUI K>, <&kp UP>;
+            bindings = <&hmr LEFT_ALT K>, <&kp UP>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;

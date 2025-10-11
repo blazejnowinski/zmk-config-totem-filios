@@ -184,7 +184,7 @@
         };
 
         alt_base_hmr {
-            bindings = <&tog 4>;
+            bindings = <&tog 5>;
             key-positions = <22 23 24 27 28 29>;
             timeout-ms = <50>;
         };
@@ -205,7 +205,7 @@
                 <&macro_press>,
                 <&kp LEFT_SHIFT &kp LEFT_CONTROL>,
                 <&macro_tap>,
-                <&kp U &kp N0 &kp N0 &kp LS(A) &kp N7 &kp SPACE>,
+                <&kp U &kp N0 &kp N0 &kp A &kp N7 &kp SPACE>,
                 <&macro_release>,
                 <&kp LEFT_SHIFT &kp LEFT_CONTROL>;
 
@@ -252,10 +252,19 @@
         base_layer {
             label = "base";
             bindings = <
-         &kp Q                &kp W              &kp E            &kp R            &kp T      &kp Y              &kp U           &kp I        &kp O           &kp P
-         &hml LEFT_CONTROL A  &hml LEFT_SHIFT S  &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G      &h_arrow_left      &j_arrow_down   &k_arrow_up  &l_arrow_right  &hmr_colon
-&kp ESC  &kp Z                &kp X              &kp C            &kp V            &kp B      &kp N              &kp M           &kp COMMA    &kp DOT         &kp FSLH    &kp ENTER
-                                                 &mo 3            &lt 1 SPACE      &kp TAB    &backspace_delete  &mt RALT SPACE  &mo 2
+         &kp Q                &kp W              &kp E            &kp R            &kp T      &kp Y              &kp U             &kp I            &kp O               &kp P
+         &hmr LEFT_CONTROL A  &hmr LEFT_SHIFT S  &hmr LEFT_ALT D  &hmr LEFT_GUI F  &kp G      &kp H              &hmr LEFT_META J  &hmr LEFT_ALT K  &hmr RIGHT_SHIFT L  &hmr_colon
+&kp ESC  &kp Z                &kp X              &lt 1 C          &kp V            &kp B      &kp N              &kp M             &kp COMMA        &kp DOT             &kp FSLH    &kp ENTER
+                                                 &mo 4            &lt 2 SPACE      &kp TAB    &backspace_delete  &hml RALT SPACE   &mo 3
+            >;
+        };
+
+        arrows {
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans     &trans
+        &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &mkp MB4  &mkp MB5   &trans  &trans
+                        &trans  &trans  &trans    &trans    &trans    &trans
             >;
         };
 
@@ -263,7 +272,7 @@
             label = "symbols";
             bindings = <
         &kp GRAVE                   &artykul                  &paragraf               &ustep                  &punkt    &trans         &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp MINUS            &kp EQUAL
-        &hml LEFT_CONTROL NUMBER_1  &hml LEFT_SHIFT NUMBER_2  &hml LEFT_ALT NUMBER_3  &hml LEFT_GUI NUMBER_4  &kp N5    &kp NUMBER_6   &hmr RIGHT_GUI N7  &hmr LEFT_ALT N8   &hmr RIGHT_SHIFT N9  &hmr RIGHT_CONTROL N0
+        &hmr LEFT_CONTROL NUMBER_1  &hmr LEFT_SHIFT NUMBER_2  &hmr LEFT_ALT NUMBER_3  &hmr LEFT_GUI NUMBER_4  &kp N5    &kp NUMBER_6   &hmr RIGHT_GUI N7  &hmr LEFT_ALT N8   &hmr RIGHT_SHIFT N9  &hmr RIGHT_CONTROL N0
 &trans  &trans                      &trans                    &trans                  &trans                  &trans    &kp BACKSLASH  &kp SQT            &kp COMMA          &kp PERIOD           &kp SLASH              &trans
                                                               &trans                  &trans                  &trans    &trans         &trans             &trans
             >;
@@ -294,7 +303,7 @@
          &kp Q         &kp W              &kp E            &kp R             &kp T      &kp Y          &kp U                &kp I        &kp O              &kp P
          &hmr LCTRL A  &hmr LEFT_SHIFT S  &hmr LEFT_ALT D  &hmr LEFT_META F  &kp G      &kp H          &hmr LEFT_META J     &hmr LALT K  &hmr LEFT_SHIFT L  &hmr LEFT_CONTROL SEMICOLON
 &kp ESC  &kp Z         &kp X              &kp C            &kp V             &kp B      &kp N          &kp M                &kp COMMA    &kp DOT            &kp FSLH                     &kp ENTER
-                                          &mo 3            &lt 1 SPACE       &kp TAB    &kp BACKSPACE  &mt RIGHT_ALT SPACE  &mo 2
+                                          &mo 4            &lt 2 SPACE       &kp TAB    &kp BACKSPACE  &mt RIGHT_ALT SPACE  &mo 3
             >;
         };
     };

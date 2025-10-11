@@ -146,6 +146,19 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        hmr_space: hmr_space {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <125>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            label = "HMR_SPACE";
+        };
     };
 };
 
@@ -173,19 +186,13 @@
 
         combo_enter {
             bindings = <&kp ENTER>;
-            key-positions = <18 17 16>;
+            key-positions = <8 9>;
             timeout-ms = <50>;
         };
 
         combo_esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <12 13 11 13>;
-            timeout-ms = <50>;
-        };
-
-        alt_base_hmr {
-            bindings = <&tog 5>;
-            key-positions = <22 23 24 27 28 29>;
+            key-positions = <1 0>;
             timeout-ms = <50>;
         };
 
@@ -252,10 +259,10 @@
         base_layer {
             label = "base";
             bindings = <
-         &kp Q                &kp W              &kp E            &kp R            &kp T      &kp Y              &kp U             &kp I            &kp O               &kp P
-         &hml LEFT_CONTROL A  &hml LEFT_SHIFT S  &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G      &kp H              &hmr LEFT_META J  &hmr LEFT_ALT K  &hmr RIGHT_SHIFT L  &hmr_colon
-&kp ESC  &kp Z                &kp X              &lt 1 C          &kp V            &kp B      &kp N              &kp M             &kp COMMA        &kp DOT             &kp FSLH    &kp ENTER
-                                                 &mo 4            &lt 2 SPACE      &kp TAB    &backspace_delete  &hmr RALT SPACE   &mo 3
+         &kp Q                &kp W              &kp E            &kp R            &kp T      &kp Y              &kp U                  &kp I            &kp O               &kp P
+         &hml LEFT_CONTROL A  &hml LEFT_SHIFT S  &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G      &kp H              &hmr LEFT_META J       &hmr LEFT_ALT K  &hmr RIGHT_SHIFT L  &hmr_colon
+&kp ESC  &kp Z                &kp X              &lt 1 C          &kp V            &kp B      &kp N              &kp M                  &kp COMMA        &kp DOT             &kp FSLH    &kp ENTER
+                                                 &mo 4            &lt 2 SPACE      &kp TAB    &backspace_delete  &hmr_space RALT SPACE  &mo 3
             >;
         };
 
@@ -294,16 +301,6 @@
        &trans  &mkp MB3  &mkp MB2  &mkp MB1  &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
 &to 0  &trans  &trans    &trans    &trans    &trans    &trans          &trans          &mkp MB4      &mkp MB5         &trans  &to 0
                          &trans    &trans    &trans    &trans          &trans          &trans
-            >;
-        };
-
-        base_with_hrm {
-            label = "alternative_base";
-            bindings = <
-         &kp Q         &kp W              &kp E            &kp R             &kp T      &kp Y          &kp U                &kp I        &kp O              &kp P
-         &hml LCTRL A  &hml LEFT_SHIFT S  &hml LEFT_ALT D  &hml LEFT_META F  &kp G      &kp H          &hmr LEFT_META J     &hmr LALT K  &hmr LEFT_SHIFT L  &hmr LEFT_CONTROL SEMICOLON
-&kp ESC  &kp Z         &kp X              &kp C            &kp V             &kp B      &kp N          &kp M                &kp COMMA    &kp DOT            &kp FSLH                     &kp ENTER
-                                          &mo 4            &lt 2 SPACE       &kp TAB    &kp BACKSPACE  &mt RIGHT_ALT SPACE  &mo 3
             >;
         };
     };

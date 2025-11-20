@@ -226,9 +226,11 @@
                 <&macro_press>,
                 <&kp LEFT_SHIFT &kp LEFT_CONTROL>,
                 <&macro_tap>,
-                <&kp U &kp N0 &kp N0 &kp A &kp N7 &kp SPACE>,
+                <&kp U>,
                 <&macro_release>,
-                <&kp LEFT_SHIFT &kp LEFT_CONTROL>;
+                <&kp LEFT_SHIFT &kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp A &kp N7 &kp SPACE>;
 
             wait-ms = <0>;
             tap-ms = <0>;
@@ -276,7 +278,7 @@
          &kp Q                  &kp W                &lt_hrmstyle 1 E   &kp R              &kp T      &kp Y              &kp U                            &kp I              &kp O                 &kp P
          &hrm_l LEFT_CONTROL A  &hrm_l LEFT_SHIFT S  &hrm_l LEFT_ALT D  &hrm_l LEFT_GUI F  &kp G      &kp H              &hrm_r LEFT_META J               &hrm_r LEFT_ALT K  &hrm_r RIGHT_SHIFT L  &hrm_r_colon
 &kp ESC  &kp Z                  &kp X                &kp C              &kp V              &kp B      &kp N              &kp M                            &kp COMMA          &kp DOT               &kp FSLH      &kp ENTER
-                                                     &mo 4              &lt 2 SPACE        &kp TAB    &backspace_delete  &altgr_space_noprior RALT SPACE  &mo 3
+                                                     &mo 5              &lt 2 SPACE        &kp TAB    &backspace_delete  &altgr_space_noprior RALT SPACE  &mo 4
             >;
         };
 
@@ -299,13 +301,22 @@
             >;
         };
 
+        ALTGR_LAYER {
+            bindings = <
+     &kp  &kp  &kp  &kp  &kp    &kp  &kp  &kp  &kp  &kp
+     &kp  &kp  &kp  &kp  &kp    &kp  &kp  &kp  &kp  &kp
+&kp  &kp  &kp  &kp  &kp  &kp    &kp  &kp  &kp  &kp  &kp  &kp
+               &kp  &kp  &kp    &kp  &kp  &kp
+            >;
+        };
+
         utility_layer {
             label = "utility";
             bindings = <
-        &kp C_BRIGHTNESS_DEC    &kp C_BRIGHTNESS_INC  &kp K_MUTE          &kp C_VOL_DN         &kp C_VOL_UP    &bt BT_SEL 0  &bt BT_SEL 1         &bt BT_SEL 2        &bt BT_SEL 3            &bt BT_SEL 4
-        &hrm_l LEFT_CONTROL F2  &hrm_l LEFT_SHIFT F3  &hrm_l LEFT_ALT F4  &hrm_l LEFT_META F5  &kp F6          &kp F7        &hrm_r LEFT_META F8  &hrm_r LEFT_ALT F9  &hrm_r RIGHT_SHIFT F10  &hrm_r RIGHT_CONTROL F11
-&kp F1  &bootloader             &sys_reset            &trans              &trans               &trans          &bt BT_CLR    &bt BT_PRV           &bt BT_NXT          &trans                  &trans                    &kp F12
-                                                      &trans              &trans               &trans          &trans        &trans               &trans
+        &kp C_BRIGHTNESS_DEC    &kp C_BRIGHTNESS_INC  &lt_hrmstyle 1 K_MUTE  &kp C_VOL_DN         &kp C_VOL_UP    &bt BT_SEL 0  &bt BT_SEL 1         &bt BT_SEL 2        &bt BT_SEL 3            &bt BT_SEL 4
+        &hrm_l LEFT_CONTROL F2  &hrm_l LEFT_SHIFT F3  &hrm_l LEFT_ALT F4     &hrm_l LEFT_META F5  &kp F6          &kp F7        &hrm_r LEFT_META F8  &hrm_r LEFT_ALT F9  &hrm_r RIGHT_SHIFT F10  &hrm_r RIGHT_CONTROL F11
+&kp F1  &bootloader             &sys_reset            &trans                 &trans               &trans          &bt BT_CLR    &bt BT_PRV           &bt BT_NXT          &trans                  &trans                    &kp F12
+                                                      &trans                 &trans               &trans          &trans        &trans               &trans
             >;
         };
 

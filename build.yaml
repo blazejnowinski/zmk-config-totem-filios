@@ -1,9 +1,9 @@
 include:
-  - board: seeed_xiao_ble
+  - board: xiao_ble
     shield: totem_left rgbled_adapter
-  - board: seeed_xiao_ble
+  - board: xiao_ble
     shield: totem_right rgbled_adapter
-  - board: seeed_xiao_ble
+  - board: xiao_ble
     shield: totem_dongle
-  - board: seeed_xiao_ble
+  - board: xiao_ble
     shield: settings_reset

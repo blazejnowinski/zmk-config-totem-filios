@@ -41,9 +41,9 @@
         hrm_l: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             require-prior-idle-ms = <125>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <240>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
 
@@ -54,9 +54,9 @@
         hrm_r: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             require-prior-idle-ms = <125>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <240>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
 
@@ -166,10 +166,10 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <240>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <125>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 35 36 37>;
             hold-trigger-on-release;
         };
@@ -196,18 +196,6 @@
             timeout-ms = <50>;
             key-positions = <23 24>;
             bindings = <&kp LC(V)>;
-        };
-
-        combo_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <8 9>;
-            timeout-ms = <50>;
-        };
-
-        combo_esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <1 0>;
-            timeout-ms = <50>;
         };
 
         capslock_fix_for_keyd {
